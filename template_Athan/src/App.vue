@@ -1,0 +1,111 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+// reactive state
+const count = ref(0)
+
+// functions that mutate state and trigger updates
+function increment() {
+  count.value++
+}
+
+// lifecycle hooks
+onMounted(() => {
+  console.log(`The initial count is ${count.value}.`)
+})
+import HelloWorld from './components/HelloWorld.vue'
+import TheWelcome from './components/TheWelcome.vue'
+</script>
+
+<template>
+ <div id="navbar" class="container">  
+        <div id="title">David's bootcamp website website</div>
+        <div id="logo">
+            <img src="cow.jpg" alt="macad cow">
+
+        </div>
+        
+
+    </div>
+
+    <div id="flex">
+
+        <div id="sidebar" class="container"> Sidebar </div>
+
+        <div id="main" class="container"> Text input </div>
+    </div>
+    <button @click="increment">Count is: {{ count }}</button>
+</template>
+
+<style scoped>
+html{
+    
+    background-color: rgb(59, 59, 59); 
+    color: white;
+}
+
+body{
+
+    margin:0;
+}
+
+div{
+
+    /* put the borders in the inside of container */
+    box-sizing: border-box;
+}
+
+img{
+
+    height: 100%;
+    width: auto;
+
+}
+
+#navbar{
+
+    height: 50px;
+    border-color: red;
+
+
+}
+
+#flex{
+    
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+#sidebar{
+    
+    width:30%;
+    border-color: blue;
+
+}
+
+#main{
+    width:70%;
+    border-color: green;
+
+}
+
+#title{
+    width: 70%;
+    float:left;
+}
+
+#logo{
+    width: 30%;
+    height: 100%;
+    float:right;
+    text-align: right;
+
+}
+
+.container{
+
+    border-style: dotted;
+    border-width: 1px;
+
+}
+</style>
