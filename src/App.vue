@@ -14,6 +14,8 @@ onMounted(() => {
   console.log(`The initial count is ${count.value}.`)
 })
 
+
+
 </script>
 
 <template>
