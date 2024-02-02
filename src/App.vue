@@ -44,12 +44,7 @@ function changeColor() {
 
     </div>
 
-    <div id="flex">
 
-        <div id="sidebar" class="container"> Sidebar </div>
-
-        <div id="main" class="container"> Text input </div>
-    </div>
     <button @click="increment">Count is: {{ count }}</button>
 
     <div id="flex">
