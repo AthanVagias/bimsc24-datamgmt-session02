@@ -48,7 +48,7 @@ function changeColor() {
 
     <div id="flex">
        <div id="sidebar" class="container">
-           Sidebar
+           Text input
            <div>
                <input type="text" v-model="selector" placeholder="#">
                <input type="text" v-model="color" placeholder="Color">
