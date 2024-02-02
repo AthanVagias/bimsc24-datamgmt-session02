@@ -24,10 +24,9 @@ function updateMainText() {
 }
 
 function changeColor() {
-    const elements = document.querySelectorAll(selector.value);
-    elements.forEach(el => {
-        el.style.backgroundColor = color.value; 
-    });
+    const elements = document.getElementById(selector.value);
+    console.log(elements)
+    elements.style.backgroundColor=color.value 
 }
 
 
