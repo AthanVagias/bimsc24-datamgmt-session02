@@ -13,14 +13,29 @@ function increment() {
 onMounted(() => {
   console.log(`The initial count is ${count.value}.`)
 })
+const text = ref('Athan'); 
+const newText = ref(''); 
 
+const selector = ref('');
+const color = ref('');
+
+function updateMainText() {
+    text.value = newText.value;
+}
+
+function changeColor() {
+    const elements = document.querySelectorAll(selector.value);
+    elements.forEach(el => {
+        el.style.backgroundColor = color.value; 
+    });
+}
 
 
 </script>
 
 <template>
  <div id="navbar" class="container">  
-        <div id="title">David's bootcamp website website</div>
+        <div id="title">Athan's website</div>
         <div id="logo">
             <img src="@/assets/cow.jpg" alt="macad cow">
 
@@ -36,6 +51,26 @@ onMounted(() => {
         <div id="main" class="container"> Text input </div>
     </div>
     <button @click="increment">Count is: {{ count }}</button>
+
+    <div id="flex">
+       <div id="sidebar" class="container">
+           Sidebar
+           <div>
+               <input type="text" v-model="selector" placeholder="#">
+               <input type="text" v-model="color" placeholder="Color">
+               <button @click="changeColor">Change Color</button>
+           </div>
+           
+           <div>
+               <input type="text" v-model="newText" placeholder="New Text">
+               <button @click="updateMainText">Change Text</button>
+           </div>
+       </div>
+       <div id="main" class="container">
+           {{ text }}
+       </div>
+   </div>
+
 </template>
 
 <style scoped>
